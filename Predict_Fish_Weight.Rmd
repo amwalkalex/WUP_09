@@ -24,7 +24,7 @@ require(leaps)
 fish <- read.csv(file = "Fish.csv")
 ```
 
-```{r eval=FALSE}
+```{r eval=TRUE}
  
 fish <- fish %>%
 mutate(across(where(is.character), as.factor))
@@ -55,16 +55,25 @@ Whitefish <- select(Whitefish, -Species)
 ### Best Two regressor model
 ```{r}
 regsubsets.out <-
-    regsubsets(Weight ~ .,
-               data = Perch,
-               nbest = 1,       # 1 best model for each number of predictors
-               nvmax = NULL,    # NULL for no limit on number of variables
-               force.in = NULL, force.out = NULL,
-               method = "exhaustive")
+regsubsets(Weight ~ .,
+data = Perch,
+nbest = 1, # 1 best model for each number of predictors
+nvmax = NULL, # NULL for no limit on number of variables
+force.in = NULL, force.out = NULL,
+method = "exhaustive")
 summary.out <- summary(regsubsets.out)
 as.data.frame(summary.out$outmat)
+library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
 ```
+
+```{r}
+best.model <- lm(Weight~Height+Width,data=Perch)
+summary(best.model)
+```
+
+The base model is the element model for Perch.
+
 
 
 ## Pike
