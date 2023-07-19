@@ -75,6 +75,12 @@ subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
 Best two regression model are weight and height.
 
 ```{r}
+Perchmodel <-lm(Weight~Height+Width, data=Perch)
+summary.lm(Perchmodel)
+```
+
+
+```{r}
 regsubsets.out <-
 regsubsets(Weight ~ .,
 data = Perch,
