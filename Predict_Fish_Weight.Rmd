@@ -142,6 +142,13 @@ Best regression model is all of them. The two best regression models is L1, and 
 
 ### Best Models
 
+```{r}
+Roachbest <-lm(Weight~.,data=Roach)
+summary.lm(Roachbest)
+```
+
+
+
 ### Best Two regressor model
 
 ## Final Summary Statements
