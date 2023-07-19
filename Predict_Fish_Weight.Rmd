@@ -69,9 +69,11 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
 ```
 
-
-
 ### Best Two regressor model
+
+
+Best two regression model are weight and height.
+
 ```{r}
 regsubsets.out <-
 regsubsets(Weight ~ .,
