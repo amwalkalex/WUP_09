@@ -102,13 +102,14 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 
 L1, and L3 are the best two regression models Best regression nodel is everything.
 
-
 ### Best Models
 
+```{r}
+Pikebest <-lm(Weight~.,data=Pike)
+summary.lm(Pikebest)
+```
 
-
-
-
+The r-squared is 0.9794 and the residual error is 70.86. The p-value is 8.679.
 
 ### Best Two regressor model
 
