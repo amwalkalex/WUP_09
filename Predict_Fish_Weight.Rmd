@@ -109,7 +109,7 @@ Pikebest <-lm(Weight~.,data=Pike)
 summary.lm(Pikebest)
 ```
 
-The r-squared is 0.9794 and the residual error is 70.86. The p-value is 8.679.
+The r-squared is 0.9794 and the residual error is 70.86. The p-value is 8.679e-10.
 
 
 ### Best Two regressor model
@@ -147,7 +147,7 @@ Roachbest <-lm(Weight~.,data=Roach)
 summary.lm(Roachbest)
 ```
 
-
+The adjusted r-squared is 0.821 and the residual error is 30.78. The p-value is 1.028e-05.
 
 ### Best Two regressor model
 
